@@ -1,0 +1,42 @@
+<div class="maincontainer">
+  <h1 class="mb-4 mt-4">USUÁRIOS</h1>
+
+  <div class="mb-5 inputsContainer">
+    <div class="input">
+      <label for="name_input">Nome:</label>
+      <input
+        type="text"
+        id="name_input"
+        class="form-control form-control-lg"
+        placeholder="Nome:"
+      />
+    </div>
+    <div class="input">
+      <label for="email_input">Email:</label>
+      <input
+        type="text"
+        id="email_input"
+        class="form-control form-control-lg"
+        placeholder="UserEmail@email.com"
+      />
+    </div>
+    <div class="input">
+      <label for="phone_input">Telefone:</label>
+      <input
+        type="text"
+        id="phone_input"
+        class="form-control form-control-lg"
+        placeholder="(DDD) X XXXX-XXXX"
+      />
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-primary mt-4 btn-lg"
+      id="saveBtn"
+      (click)="postUser()"
+    >
+      Salvar
+    </button>
+  </div>
+</div>

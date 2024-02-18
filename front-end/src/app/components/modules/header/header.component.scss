@@ -1,0 +1,25 @@
+:host {
+  h1 {
+    margin-left: auto;
+    font-size: 3rem;
+    text-align: center;
+  }
+  .inputsContainer {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1000px;
+    padding: 1.3rem 3rem;
+    padding-bottom: 2rem;
+    background-color: #fff;
+    border-radius: 7px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.212);
+    gap: 15px;
+
+    .input {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

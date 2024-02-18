@@ -1,0 +1,96 @@
+<div class="containerTable">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList; let i = index">
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.phone }}</td>
+        <td>
+          <button
+            id="editBtn"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+            (click)="getID(user.id)"
+          >
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>
+
+        <td>
+          <button id="deleteBtn" (click)="deleteUser(user.id)">
+            <i class="bi bi-trash3-fill"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-5 containerModal">
+            <div class="input">
+              <label for="name_input_edit">Nome:</label>
+              <input
+                type="text"
+                id="name_input_edit"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="input">
+              <label for="email_input_edit">Email:</label>
+              <input
+                type="text"
+                id="email_input_edit"
+                class="form-control form-control-lg"
+              />
+            </div>
+            <div class="input">
+              <label for="phone_input_edit">Telefone:</label>
+              <input
+                type="text"
+                id="phone_input_edit"
+                class="form-control form-control-lg"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" (click)="putUser()">
+            Salvar Mudanças!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
