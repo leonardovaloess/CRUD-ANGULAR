@@ -4,7 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "json-server --watch db.json"
+    "build": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.9.0"
   },
   "keywords": [],
   "author": "",
