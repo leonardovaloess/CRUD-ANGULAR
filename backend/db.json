@@ -1,10 +1,16 @@
 {
   "users": [
     {
-      "name": "ADRIANA LUCIA BERLANDA",
+      "name": "LEONARDO BERLANDA DE VALOES",
       "email": "leonardoberlandadevaloes@gmail.com",
-      "phone": "+554198989019",
+      "phone": "41998989019",
       "id": 1
+    },
+    {
+      "name": "zaiko",
+      "email": "penis@email",
+      "phone": "41998989019",
+      "id": 2
     }
   ]
 }

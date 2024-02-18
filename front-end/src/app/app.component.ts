@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
   template: `
     <app-header />
     <app-users-table  />
-    
   `,
 
 })

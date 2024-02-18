@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class UsersTableComponent implements OnInit {
-  constructor(public userService: UserService, private http: HttpClient) {}
+  constructor(public userService: UserService) {}
 
   async ngOnInit() {
     await this.userService.getUsers();
