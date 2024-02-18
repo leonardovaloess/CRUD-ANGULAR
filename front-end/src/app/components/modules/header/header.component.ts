@@ -25,25 +25,26 @@ export class HeaderComponent implements OnInit {
   };
 
   public async postUser() {
-
     const emailRegExp: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const numberRegExp: RegExp = /^[0-9]+$/;
 
-    if (!emailRegExp.test(this.newUser.email) || !numberRegExp.test(this.newUser.phone)) {
+    if (
+      !emailRegExp.test(this.newUser.email) ||
+      !numberRegExp.test(this.newUser.phone)
+    ) {
       alert('Email ou número de telefone inválidos');
-      return
-    } 
+      return;
+    }
 
-    const createdUser = await this.userService.insertUser(this.newUser)
+    const createdUser = await this.userService.insertUser(this.newUser);
 
     this.newUser = {
       name: '',
       email: '',
       phone: '',
       id: 0,
-    }
-    
-    alert(`Usuario ${createdUser.name} criado com sucesso!`)
+    };
+
+    alert(`Usuario ${createdUser.name} criado com sucesso!`);
   }
-    
 }

@@ -36,8 +36,13 @@ export class UserService {
   }
 
   //EDITAR
-  // putUser(user: IUser) {
-  //   const src = `${this.API_URL}/${user.id}`
-  //   return this.httpClient.put(src, user);
-  // }
+  editUser(user: IUser) {
+    const src = `${this.API_URL}/${user.id}`
+    return this.httpClient.put(src, user).subscribe(
+      ()=>{
+        console.log("Editado com sucesso! ")
+        this.getUsers()
+      }
+      );
+  }
 }

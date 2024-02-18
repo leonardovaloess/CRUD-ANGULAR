@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../../../Interfaces/IUsers.interface';
 import { UserService } from '../../../services/user.service';
-import { NgModel } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule],
   selector: 'app-users-table',
   templateUrl: './users-table.component.html',
   styleUrls: ['./users-table.component.scss'],
@@ -38,30 +38,13 @@ export class UsersTableComponent implements OnInit {
   }
 
   public putUser() {
-    console.log(this.editedUser);
-    const userName: string = (
-      document.getElementById('name_input_edit') as HTMLInputElement
-    ).value;
+    this.userService.editUser(this.editedUser)
 
-    const userEmail: string = (
-      document.getElementById('email_input_edit') as HTMLInputElement
-    ).value;
-
-    const userPhone: string = (
-      document.getElementById('phone_input_edit') as HTMLInputElement
-    ).value;
-
-    this.editedUser.name = userName;
-    this.editedUser.email = userEmail;
-    this.editedUser.phone = userPhone;
-
-    this.http.put(this.putUrl + this.editedUser.id, this.editedUser).subscribe(
-      () => {
-        console.log('Atualizado com sucesso');
-      },
-      (error) => {
-        console.log('Erro ao atualizar! ', error.message);
-      }
-    );
+    this.editedUser = {
+      name: '',
+      email: '',
+      phone: '',
+      id: 0,
+    }
   }
 }

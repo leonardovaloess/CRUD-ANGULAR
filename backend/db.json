@@ -1,28 +1,10 @@
 {
   "users": [
     {
-      "name": "admin",
-      "email": "admin@email.com",
-      "phone": "41998989019",
+      "name": "ADRIANA LUCIA BERLANDA",
+      "email": "leonardoberlandadevaloes@gmail.com",
+      "phone": "+554198989019",
       "id": 1
-    },
-    {
-      "name": "geovanna",
-      "email": "gejav@gmail.com",
-      "phone": "41997722817",
-      "id": 3
-    },
-    {
-      "name": "Gabriel",
-      "email": "gabriel.berlanda@gmail.com",
-      "phone": "412412412412",
-      "id": 4
-    },
-    {
-      "name": "Leo",
-      "email": "leo@gmail.com",
-      "phone": "124214124",
-      "id": 5
     }
   ]
 }
