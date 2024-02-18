@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IUser } from '../../../Interfaces/IUsers.interface';
 import { UserService } from '../../../services/user.service';
@@ -13,35 +13,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
 })
 export class UsersTableComponent implements OnInit {
-  userList: IUser[] = [];
+  constructor(public userService: UserService, private http: HttpClient) {}
 
-  constructor(private userService: UserService, private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.getUsers();
-  }
-
-  public getUsers() {
-    this.userService.getUsers().subscribe({
-      next: (result) => {
-        this.userList = result;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
+  async ngOnInit() {
+    await this.userService.getUsers();
   }
 
   public deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(
-      () => {
-        console.log('Excluido com sucesso!');
-        this.getUsers;
-      },
-      (error) => {
-        console.log('Erro ao excluir: ', error);
-      }
-    );
+    this.userService.deleteUser(id);
   }
 
   editedUser: IUser = {
