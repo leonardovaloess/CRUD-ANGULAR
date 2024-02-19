@@ -1,15 +1,15 @@
 {
   "users": [
     {
-      "name": "LEONARDO BERLANDA DE VALOES",
-      "email": "leonardoberlandadevaloes@gmail.com",
-      "phone": "41998989019",
+      "name": "Admin",
+      "email": "admin@email.com",
+      "phone": "4199999999",
       "id": 1
     },
     {
-      "name": "zaiko",
-      "email": "penis@email",
-      "phone": "41998989019",
+      "name": "Moderador",
+      "email": "moderador@gmail.com",
+      "phone": "4299999999",
       "id": 2
     }
   ]
